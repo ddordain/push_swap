@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/17 14:48:54 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/29 22:19:12 by ddordain         ###   ########.fr       */
+/*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
+/*   Updated: 2021/12/29 22:21:35 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "push_swap/algorithm.h"
-# include "push_swap/operator.h"
-
-int		safety_check_tab(char **tab);
-int		select_algorithm(t_dlist *list);
-int		size_2(t_dlist *list);
-int		size_3(t_dlist *list);
-
-#endif
+int	select_algorithm(t_dlist *list)
+{
+	if (ft_dlist_size(list) == 1)
+		return (EXIT_SUCCESS);
+	if (ft_dlist_size(list) == 2)
+		size_2(list);
+	if (ft_dlist_size(list) == 3)
+		size_3(list);
+	return (EXIT_FAILURE);
+}

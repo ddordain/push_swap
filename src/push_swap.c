@@ -6,11 +6,12 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:57:09 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/28 17:58:54 by ddordain         ###   ########.fr       */
+/*   Updated: 2021/12/29 22:50:48 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static int	alloc_number(t_dlist *list, char *str)
 {
@@ -25,45 +26,6 @@ static int	alloc_number(t_dlist *list, char *str)
 	return (0);
 }
 
-static int	safety_check_string(char *str)
-{
-	size_t	i;
-	size_t	size;
-
-	i = 0;
-	size = ft_strlen(str);
-	if (str[i] == '\0')
-		return (-1);
-	while (str[i])
-	{
-		if ((str[i] == '-' && i != 0) || (str[i] == '-' && size <= 1))
-			return (-1);
-		i++;
-	}
-	i = 0;
-	while (str[i])
-	{
-		if (ft_isdigit(str[i]) == 0 && str[i] != '-')
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
-static int	safety_check_tab(char **tab)
-{
-	size_t	i;
-
-	i = 1;
-	while (tab[i])
-	{
-		if (safety_check_string(tab[i]) == -1)
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
 int	main(int ac, char **av)
 {
 	t_dlist	stack_a;
@@ -72,7 +34,7 @@ int	main(int ac, char **av)
 
 	ft_dlist_init(&stack_a, free);
 	ft_dlist_init(&stack_b, free);
-	i = 0;
+	i = 1;
 	if (safety_check_tab(av) == -1 || ac <= 1)
 		return (write(STDERR_FILENO, "Error\n", 7));
 	while (ac > 1)
@@ -80,6 +42,29 @@ int	main(int ac, char **av)
 		alloc_number(&stack_a, av[i]);
 		i++;
 		ac--;
+	}
+	int size;
+	int *number;
+	t_elem *ptr;
+
+	size = (&stack_a)->size;
+	ptr = (&stack_a)->head;
+	while (size >= 1)
+	{
+		number = ptr->data;
+		printf("%d\n", *number);
+		ptr = ptr->next;
+		size--;
+	}
+	select_algorithm(&stack_a);
+	size = (&stack_a)->size;
+	ptr = (&stack_a)->head;
+	while (size >= 1)
+	{
+		number = ptr->data;
+		printf("%d\n", *number);
+		ptr = ptr->next;
+		size--;
 	}
 	ft_dlist_destroy(&stack_a);
 	ft_dlist_destroy(&stack_b);

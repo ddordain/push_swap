@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 17:01:57 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/28 17:44:18 by ddordain         ###   ########.fr       */
+/*   Updated: 2021/12/29 23:04:09 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 # define OPERATOR_H
 
 # include "push_swap.h"
-# include "libft/dlist.h"
-# include "libft/fd.h"
+# include "../libft/include/libft.h"
 
 /* pa : push top of stack B on top of stack A */
 /* pb : push top of stack A on top of stack B */
@@ -28,6 +27,9 @@
 
 void	pa(t_dlist *list_a, t_dlist *list_b, t_elem *element);
 void	pb(t_dlist *list_b, t_dlist *list_a, t_elem *element);
+void	sa(t_dlist *list);
+void	sb(t_dlist *list);
+void	ss(t_dlist *list_a, t_dlist *list_b);
 void	ra(t_dlist *list);
 void	rb(t_dlist *list);
 void	rr(t_dlist *list_a, t_dlist *list_b);
