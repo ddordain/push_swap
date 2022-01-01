@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:31:17 by ddordain          #+#    #+#              #
-#    Updated: 2021/12/29 23:03:02 by ddordain         ###   ########.fr        #
+#    Updated: 2022/01/01 20:59:53 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,12 +72,6 @@ fclean: clean
 		@echo "$(RED)========== FCLEAN =========="
 		$(RM) $(NAME)
 		make -C $(LIB_DIR) fclean
-		@echo "$(RED)=========== DONE ===========$(RESET)"
-git_push: fclean
-		@echo "$(RED)========== GIT_PUSH =========="
-		git add *
-		git commit -m "Push_Swap - $(NOW)"
-		git push 
 		@echo "$(RED)=========== DONE ===========$(RESET)"
 bonus: all
 re: fclean all
