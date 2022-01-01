@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/19 21:26:07 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/28 17:45:31 by ddordain         ###   ########.fr       */
+/*   Updated: 2021/12/30 13:26:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	rb(t_dlist *list)
 
 void	rr(t_dlist *list_a, t_dlist *list_b)
 {
-	ra(list_a);
-	rb(list_b);
+	rotate(list_a);
+	rotate(list_b);
+	ft_putstr_fd("rr\n", 1);
 }

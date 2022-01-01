@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:57:09 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/29 22:50:48 by ddordain         ###   ########.fr       */
+/*   Updated: 2021/12/30 12:45:34 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static int	alloc_number(t_dlist *list, char *str)
 
 	number = malloc(sizeof(int));
 	if (number == NULL)
-		return (-1);
+		return (EXIT_FAILURE);
 	*number = ft_atoi(str);
 	if (ft_dlist_ins_next(list, ft_dlist_tail(list), number) == -1)
-		return (-1);
-	return (0);
+		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
 }
 
 int	main(int ac, char **av)
@@ -35,7 +35,7 @@ int	main(int ac, char **av)
 	ft_dlist_init(&stack_a, free);
 	ft_dlist_init(&stack_b, free);
 	i = 1;
-	if (safety_check_tab(av) == -1 || ac <= 1)
+	if (safety_check_tab(av) == EXIT_FAILURE || ac <= 1)
 		return (write(STDERR_FILENO, "Error\n", 7));
 	while (ac > 1)
 	{

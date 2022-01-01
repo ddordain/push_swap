@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 00:01:59 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/28 17:45:38 by ddordain         ###   ########.fr       */
+/*   Updated: 2021/12/30 13:26:15 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	rrb(t_dlist *list)
 
 void	rrr(t_dlist *list_a, t_dlist *list_b)
 {
-	rra(list_a);
-	rrb(list_b);
+	rev_rotate(list_a);
+	rev_rotate(list_b);
+	ft_putstr_fd("rrr\n", 1);
 }
