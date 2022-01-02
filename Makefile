@@ -6,7 +6,7 @@
 #    By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/12/29 17:31:17 by ddordain          #+#    #+#              #
-#    Updated: 2022/01/01 20:59:53 by ddordain         ###   ########.fr        #
+#    Updated: 2022/01/03 00:04:05 by ddordain         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ OBJ_DIR		=	obj/
 SRCS_DIR	=	src/
 SRCS		=	push_swap.c \
 				init.c \
+				math.c \
 				push.c \
 				rotate.c \
 				rrotate.c \

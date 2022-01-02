@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:57:09 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/30 12:45:34 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/03 00:01:16 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int ac, char **av)
 		ptr = ptr->next;
 		size--;
 	}
-	select_algorithm(&stack_a);
+	select_algorithm(&stack_a, &stack_b);
 	size = (&stack_a)->size;
 	ptr = (&stack_a)->head;
 	while (size >= 1)
