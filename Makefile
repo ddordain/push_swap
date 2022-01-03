@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all clean re fclean test norm git_push
+.PHONY: all clean re fclean
 
 NAME 		=	push_swap
 LIBFT 		= 	libft.a
