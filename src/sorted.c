@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
-/*   Updated: 2021/12/29 21:32:00 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/04 13:20:50 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ int	sorted(t_dlist *list)
 		number = element->data;
 		number_next = element->next->data;
 		if (*number > *number_next)
-			return (0);
+			return (EXIT_FAILURE);
 		size--;
 	}
-	return (1);
+	return (EXIT_SUCCESS);
 }
 
 int	sorted_final(t_dlist *list_a, t_dlist *list_b)
 {
 	if (list_a->size == 0)
 		return (-1);
-	if (sorted(list_a) == 1 && ft_dlist_size(list_b) == 0)
-		return (1);
+	if (sorted(list_a) == 1 && ft_dlist_size(list_b) == EXIT_SUCCESS)
+		return (EXIT_SUCCESS);
 	else
-		return (0);
+		return (EXIT_FAILURE);
 }

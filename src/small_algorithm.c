@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:44:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/03 00:02:49 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/04 13:16:52 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,32 +52,31 @@ int	size_3(t_dlist *list)
 	return (EXIT_SUCCESS);
 }
 
-int	size_5(t_dlist *list_a, t_dlist *list_b)
+int	size_4(t_dlist *list_a, t_dlist *list_b)
 {
-	if (ft_dlist_size(list_a) == 4)
+	pb(list_b, list_a, list_a->head);
+	size_3(list_a);
+	if (get_nbr(list_b->head) < get_nbr(list_a->head))
+	{
+		pa(list_a, list_b, list_b->head);
+	}
+	else if (get_nbr(list_b->head) > get_nbr(list_a->tail))
+	{
+		pa(list_a, list_b, list_b->head);
+		ra(list_a);
+	}
+	else if (get_nbr(list_b->head) < get_nbr(list_a->head->next))
+	{
+		pa(list_a, list_b, list_b->head);
+		sa(list_a);
+	}
+	else
 	{
 		pb(list_b, list_a, list_a->head);
-		size_3(list_a);
-		if (get_nbr(list_b->head) < get_nbr(list_a->head))
-			pa(list_a, list_b, list_a->head);
-		if (get_nbr(list_b->head) > get_nbr(list_a->tail))
-		{
-			pa(list_a, list_b, list_a->head);
-			ra(list_a);
-		}
-		if (get_nbr(list_b->head) > get_nbr(list_a->head->next))
-		{
-			pb(list_b, list_a, list_a->head);
-			sb(list_b);
-			pa(list_a, list_b, list_b->head);
-			sa(list_a);
-			pa(list_a, list_b, list_b->head);
-		}
-		else
-		{
-			pa(list_a, list_b, list_b->head);
-			sa(list_a);
-		}
+		sb(list_b);
+		pa(list_a, list_b, list_b->head);
+		sa(list_a);
+		pa(list_a, list_b, list_b->head);
 	}
 	return (EXIT_SUCCESS);
 }
