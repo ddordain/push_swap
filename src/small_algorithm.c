@@ -6,25 +6,19 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:44:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/04 13:16:52 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/04 18:34:19 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	size_2(t_dlist *list)
+void	size_2(t_dlist *list)
 {
-	int	*first;
-	int	*second;
-
-	first = list->head->data;
-	second = list->head->next->data;
-	if (*second < *first)
+	if (get_index(list->head) == 1)
 		sa(list);
-	return (EXIT_SUCCESS);
 }
 
-int	size_3(t_dlist *list)
+void	size_3(t_dlist *list)
 {
 	int	*first;
 	int	*second;
@@ -49,7 +43,6 @@ int	size_3(t_dlist *list)
 	}
 	if (*first < *second && *first > *third && *second > *third)
 		rra(list);
-	return (EXIT_SUCCESS);
 }
 
 int	size_4(t_dlist *list_a, t_dlist *list_b)
