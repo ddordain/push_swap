@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:48:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 16:51:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 17:36:58 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ void	size_5(t_dlist *list_a, t_dlist *list_b);
 /* algorithm.c : main algorithm to sort the stack */
 void	algorithm_1_class_in_b(t_dlist *list_a, t_dlist *list_b);
 void	algorithm(t_dlist *list_a, t_dlist *list_b);
+
+/* algorithm_utils.c : utilitaries for the algorithm */
+void	do_ra(t_dlist *list, int n);
+void	do_rra(t_dlist *list, int n);
 
 /* math.c : functions to access the number and the index */
 int		get_nbr(t_elem *element);

@@ -6,29 +6,11 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/06 14:51:29 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 16:51:31 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 17:45:57 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static void	do_ra(t_dlist *list, int n)
-{
-	while (n > 0)
-	{
-		ra(list);
-		n--;
-	}
-}
-
-static void	do_rra(t_dlist *list, int n)
-{
-	while (n > 0)
-	{
-		rra(list);
-		n--;
-	}
-}
 
 void	algorithm_1_class_in_b(t_dlist *list_a, t_dlist *list_b)
 {
