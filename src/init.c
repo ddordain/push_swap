@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 15:24:25 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 16:52:02 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	select_algorithm(t_dlist *list_a, t_dlist *list_b)
 		size_4(list_a, list_b);
 	if (ft_dlist_size(list_a) == 5)
 		size_5(list_a, list_b);
-	else
-		algorithm_1(list_a, list_b);
+	if (ft_dlist_size(list_a) > 5)
+		algorithm(list_a, list_b);
 	return (EXIT_FAILURE);
 }
 
