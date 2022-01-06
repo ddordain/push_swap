@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/29 21:44:56 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/04 18:34:19 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 14:19:00 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,56 +20,51 @@ void	size_2(t_dlist *list)
 
 void	size_3(t_dlist *list)
 {
-	int	*first;
-	int	*second;
-	int	*third;
+	int	first;
+	int	second;
+	int	third;
 
-	first = list->head->data;
-	second = list->head->next->data;
-	third = list->tail->data;
-	if (*first > *second && *first < *third && *second < *third)
+	first = get_nbr(list->head);
+	second = get_nbr(list->head->next);
+	third = get_nbr(list->tail);
+	if (first > second && first < third && second < third)
 		sa(list);
-	if (*first > *second && *first > *third && *second > *third)
+	if (first > second && first > third && second > third)
 	{
 		sa(list);
 		rra(list);
 	}
-	if (*first > *second && *first > *third && *second < *third)
+	if (first > second && first > third && second < third)
 		ra(list);
-	if (*first < *second && *first < *third && *second > *third)
+	if (first < second && first < third && second > third)
 	{
 		sa(list);
 		ra(list);
 	}
-	if (*first < *second && *first > *third && *second > *third)
+	if (first < second && first > third && second > third)
 		rra(list);
 }
 
-int	size_4(t_dlist *list_a, t_dlist *list_b)
-{
+void	size_4(t_dlist *list_a, t_dlist *list_b)
+{	
+	while (get_index(list_a->head) != 0)
+		ra(list_a);
 	pb(list_b, list_a, list_a->head);
 	size_3(list_a);
-	if (get_nbr(list_b->head) < get_nbr(list_a->head))
-	{
-		pa(list_a, list_b, list_b->head);
-	}
-	else if (get_nbr(list_b->head) > get_nbr(list_a->tail))
-	{
-		pa(list_a, list_b, list_b->head);
+	pa(list_a, list_b, list_b->head);
+}
+
+void	size_5(t_dlist *list_a, t_dlist *list_b)
+{
+	while (get_index(list_a->head) != 0 && get_index(list_a->head) != 1)
 		ra(list_a);
-	}
-	else if (get_nbr(list_b->head) < get_nbr(list_a->head->next))
-	{
-		pa(list_a, list_b, list_b->head);
-		sa(list_a);
-	}
-	else
-	{
-		pb(list_b, list_a, list_a->head);
+	pb(list_b, list_a, list_a->head);
+	while (get_index(list_a->head) != 0 && get_index(list_a->head) != 1)
+		ra(list_a);
+	pb(list_b, list_a, list_a->head);
+	size_3(list_a);
+	if (get_index(list_b->head) < get_index(list_b->head->next))
 		sb(list_b);
-		pa(list_a, list_b, list_b->head);
-		sa(list_a);
-		pa(list_a, list_b, list_b->head);
-	}
-	return (EXIT_SUCCESS);
+	pa(list_a, list_b, list_b->head);
+	pa(list_a, list_b, list_b->head);
 }

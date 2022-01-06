@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:48:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/04 18:29:01 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 14:14:13 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int		alloc_index_prev(t_dlist *list);
 /* small_algorithm.c : functions to sort a small stack */
 void	size_2(t_dlist *list_a);
 void	size_3(t_dlist *list_a);
-int		size_4(t_dlist *list_a, t_dlist *list_b);
-
+void	size_4(t_dlist *list_a, t_dlist *list_b);
+void	size_5(t_dlist *list_a, t_dlist *list_b);
 
 /* math.c : functions to access the number and the index */
 int		get_nbr(t_elem *element);

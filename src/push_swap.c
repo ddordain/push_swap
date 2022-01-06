@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:57:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/04 18:08:17 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/06 13:54:55 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,9 +46,9 @@ int	main(int ac, char **av)
 		ptr = ptr->next;
 		size--;
 	}
-	// if (sorted_final(&stack_a, &stack_b) == EXIT_SUCCESS)
-	//	return (0);
-	// select_algorithm(&stack_a, &stack_b);
+	if (sorted_final(&stack_a, &stack_b) == EXIT_SUCCESS)
+		return (0);
+	select_algorithm(&stack_a, &stack_b);
 	size = (&stack_a)->size;
 	ptr = (&stack_a)->head;
 	while (size >= 1)
