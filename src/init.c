@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 16:52:02 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 00:23:10 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	select_algorithm(t_dlist *list_a, t_dlist *list_b)
 		size_4(list_a, list_b);
 	if (ft_dlist_size(list_a) == 5)
 		size_5(list_a, list_b);
-	if (ft_dlist_size(list_a) > 5)
+	if (ft_dlist_size(list_a) > 5 && ft_dlist_size(list_b) < 100)
 		algorithm(list_a, list_b);
 	return (EXIT_FAILURE);
 }
@@ -83,7 +83,23 @@ int	alloc_number(t_dlist *list, char *str)
 		return (EXIT_FAILURE);
 	sub_elem->number = ft_atoi(str);
 	sub_elem->index = 0;
+	sub_elem->chunk = 0;
 	if (ft_dlist_ins_next(list, ft_dlist_tail(list), sub_elem) == -1)
 		return (EXIT_FAILURE);
+	return (EXIT_SUCCESS);
+}
+
+int	alloc_chunk(t_dlist *list)
+{
+	t_elem	*element;
+	t_nb	*sub_elem;
+
+	element = list->head;
+	while (element != NULL)
+	{
+		sub_elem = element->data;
+		sub_elem->chunk = get_index(element) / CHUNK_DIVISOR;
+		element = element->next;
+	}
 	return (EXIT_SUCCESS);
 }

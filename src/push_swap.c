@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:57:09 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 17:10:46 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 00:29:50 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,32 +32,33 @@ int	main(int ac, char **av)
 	}
 	alloc_index_head(&stack_a);
 	alloc_index_prev(&stack_a);
+	alloc_chunk(&stack_a);
 
-//	int 	size;
-//	t_elem 	*ptr;
-//	t_nb	*sub;
+	int 	size;
+	t_elem 	*ptr;
+	t_nb	*sub;
 
-//	size = (&stack_a)->size;
-//	ptr = (&stack_a)->head;
-//	while (size >= 1)
-//	{
-//		sub = ptr->data;
-//		printf("valeur : %d, index : %d\n", sub->number, sub->index);
-//		ptr = ptr->next;
-//		size--;
-//	}
+	size = (&stack_a)->size;
+	ptr = (&stack_a)->head;
+	while (size >= 1)
+	{
+		sub = ptr->data;
+		printf("valeur : %d, index : %d, chunk : %d\n", sub->number, sub->index, sub->chunk);
+		ptr = ptr->next;
+		size--;
+	}
 //	if (sorted_final(&stack_a, &stack_b) == EXIT_SUCCESS)
 //		return (0);
 	select_algorithm(&stack_a, &stack_b);
-//	size = (&stack_a)->size;
-//	ptr = (&stack_a)->head;
-//	while (size >= 1)
-//	{
-//		sub = ptr->data;
-//		printf("valeur : %d, index : %d\n", sub->number, sub->index);
-//		ptr = ptr->next;
-//		size--;
-//	}
+	size = (&stack_a)->size;
+	ptr = (&stack_a)->head;
+	while (size >= 1)
+	{
+		sub = ptr->data;
+		printf("valeur : %d, index : %d, chunk : %d\n", sub->number, sub->index, sub->chunk);
+		ptr = ptr->next;
+		size--;
+	}
 	ft_dlist_destroy(&stack_a);
 	ft_dlist_destroy(&stack_b);
 	return (0);

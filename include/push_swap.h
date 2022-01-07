@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:48:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/06 17:36:58 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 01:35:45 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,14 @@
 # include "push_swap/algorithm.h"
 # include "push_swap/operator.h"
 
+# define CHUNK_DIVISOR 10
+
 /* type structure : structure of every single number of the stack, the int and its final index place */
 typedef struct s_push_swap_element
 {
 	int	number;
 	int	index;
+	int	chunk;
 }		t_nb;
 
 /* security.c : functions to prevent from wrong inputs */
@@ -31,6 +34,7 @@ int		select_algorithm(t_dlist *list_a, t_dlist *list_b);
 int		alloc_number(t_dlist *list, char *str);
 int		alloc_index_head(t_dlist *list);
 int		alloc_index_prev(t_dlist *list);
+int		alloc_chunk(t_dlist *list);
 
 /* small_algorithm.c : functions to sort a small stack */
 void	size_2(t_dlist *list_a);
@@ -46,8 +50,18 @@ void	algorithm(t_dlist *list_a, t_dlist *list_b);
 void	do_ra(t_dlist *list, int n);
 void	do_rra(t_dlist *list, int n);
 
+
+/* algorithm_improved.c */ 
+void	algorithm_improved(t_dlist *list_a, t_dlist *list_b);
+
+/* algorithm_imp_utils.c */
+int		chunk_from_head(t_dlist *list, int chunk);
+int		chunk_from_tail(t_dlist *list, int chunk);
+
 /* math.c : functions to access the number and the index */
 int		get_nbr(t_elem *element);
 int		get_index(t_elem *element);
+int		get_chunk(t_elem *element);
+int		ft_abs(int nb)
 
 #endif
