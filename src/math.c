@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 11:22:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 01:35:13 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 02:21:03 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,4 @@ int	get_chunk(t_elem *element)
 	sub_elem = element->data;
 	chunk = sub_elem->chunk;
 	return (chunk);
-}
-
-int	ft_abs(int nb)
-{
-	if (nb < 0)
-		nb = nb * -1;
-	return (nb);
 }
