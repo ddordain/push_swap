@@ -6,29 +6,29 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 00:44:06 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 02:21:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 17:14:17 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	adjusted_b(t_dlist *list_a, t_dlist *list_b)
+void	top_on_list_b(t_dlist *list_a, t_dlist *list_b)
 {
-	int		index_a;
-	t_elem	*element;
-	int		position;
+	int	r;
+	int rr;
 
-	index_a = get_index(list_a->head);
-	element = list_b->head;
-	position = 0;
-	while (element != NULL)
+	r = 0;
+	rr = 0;
+	while (ft_dlist_size(list_b))
 	{
-		if (index_a > get_index(element))
-			break ;
-		position++;
-		element = element->next;
+		r = index_from_head(list_b, ft_dlist_size(list_b) - 1);
+		rr = index_from_tail(list_b, ft_dlist_size(list_b) - 1);
+		if (r <= rr)
+			do_rb(list_b, r);
+		if (r > rr)
+			do_rrb(list_b, rr);
+		pa (list_a, list_b, list_b->head);
 	}
-	if (position / ft_dlist_size(list_b))
 }
 
 void	algorithm_improved(t_dlist *list_a, t_dlist *list_b)
@@ -42,9 +42,9 @@ void	algorithm_improved(t_dlist *list_a, t_dlist *list_b)
 			chunk++;
 		if (chunk_from_head(list_a, chunk) <= chunk_from_tail(list_a, chunk))
 			do_ra(list_a, chunk_from_head(list_a, chunk));
-		else
+		if (chunk_from_head(list_a, chunk) > chunk_from_tail(list_a, chunk))
 			do_rra(list_a, chunk_from_tail(list_a, chunk));
-		
 		pb(list_b, list_a, list_a->head);
 	}
+	top_on_list_b(list_a, list_b);
 }

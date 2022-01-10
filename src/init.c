@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 00:23:10 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 12:48:30 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ int	select_algorithm(t_dlist *list_a, t_dlist *list_b)
 		size_4(list_a, list_b);
 	if (ft_dlist_size(list_a) == 5)
 		size_5(list_a, list_b);
-	if (ft_dlist_size(list_a) > 5 && ft_dlist_size(list_b) < 100)
+	if (ft_dlist_size(list_a) > 5 && ft_dlist_size(list_a) <= 10)
 		algorithm(list_a, list_b);
+	if (ft_dlist_size(list_a) > 10)
+		algorithm_improved(list_a, list_b);
 	return (EXIT_FAILURE);
 }
 
@@ -93,12 +95,14 @@ int	alloc_chunk(t_dlist *list)
 {
 	t_elem	*element;
 	t_nb	*sub_elem;
+	int		chunk_divisor;
 
+	chunk_divisor = ft_dlist_size(list) / 10;
 	element = list->head;
 	while (element != NULL)
 	{
 		sub_elem = element->data;
-		sub_elem->chunk = get_index(element) / CHUNK_DIVISOR;
+		sub_elem->chunk = get_index(element) / chunk_divisor;
 		element = element->next;
 	}
 	return (EXIT_SUCCESS);

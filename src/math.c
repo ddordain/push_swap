@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 11:22:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 02:21:03 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/07 14:41:27 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,22 @@ int	get_chunk(t_elem *element)
 	sub_elem = element->data;
 	chunk = sub_elem->chunk;
 	return (chunk);
+}
+
+int	get_max_chunk(t_dlist *list)
+{
+	t_nb	*sub_elem;
+	int		max_chunk;
+	t_elem	*element;
+
+	element = list->head;
+	sub_elem =element->data;
+	max_chunk = sub_elem->chunk;
+	while (element != NULL)
+	{
+		if (max_chunk < get_chunk(element))
+			max_chunk = get_chunk(element);
+		element = element->next;
+	}
+	return (max_chunk);
 }
