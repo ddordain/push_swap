@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/02 11:22:23 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 14:41:27 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:52:24 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ int	get_max_chunk(t_dlist *list)
 	t_elem	*element;
 
 	element = list->head;
-	sub_elem =element->data;
+	sub_elem = element->data;
 	max_chunk = sub_elem->chunk;
 	while (element != NULL)
 	{

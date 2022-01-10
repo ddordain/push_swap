@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/17 14:48:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/10 12:48:27 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:48:08 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "push_swap/algorithm.h"
 # include "push_swap/operator.h"
 
-/* type structure : structure of every single number of the stack, the int and its final index place */
+/* type structure */
 typedef struct s_push_swap_element
 {
 	int	number;
@@ -28,7 +28,7 @@ typedef struct s_push_swap_element
 int		safety_check_tab(char **tab);
 int		check_duplicate(t_dlist *list);
 
-/* init : function that initiate the program once data have been clean-checked */
+/* init : function that initiate the program */
 int		select_algorithm(t_dlist *list_a, t_dlist *list_b);
 int		alloc_number(t_dlist *list, char *str);
 int		alloc_index_head(t_dlist *list);
@@ -51,7 +51,7 @@ void	do_rra(t_dlist *list, int n);
 void	do_rb(t_dlist *list, int n);
 void	do_rrb(t_dlist *list, int n);
 
-/* algorithm_improved.c */ 
+/* algorithm_improved.c */
 void	algorithm_improved(t_dlist *list_a, t_dlist *list_b);
 void	top_on_list_b(t_dlist *list_a, t_dlist *list_b);
 

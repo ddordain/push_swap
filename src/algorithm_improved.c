@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 00:44:06 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 17:14:17 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:37:32 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	top_on_list_b(t_dlist *list_a, t_dlist *list_b)
 {
 	int	r;
-	int rr;
+	int	rr;
 
 	r = 0;
 	rr = 0;

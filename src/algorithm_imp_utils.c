@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/07 01:16:06 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/07 17:15:24 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:52:08 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	chunk_from_tail(t_dlist *list, int chunk)
 
 int	index_from_head(t_dlist *list, int index)
 {
-	t_elem *element;
+	t_elem	*element;
 	int		from_head;
 
 	element = list->head;
@@ -65,7 +65,7 @@ int	index_from_head(t_dlist *list, int index)
 
 int	index_from_tail(t_dlist *list, int index)
 {
-	t_elem *element;
+	t_elem	*element;
 	int		from_tail;
 
 	element = list->tail;

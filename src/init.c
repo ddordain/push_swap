@@ -6,7 +6,7 @@
 /*   By: ddordain <ddordain@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 16:06:54 by ddordain          #+#    #+#             */
-/*   Updated: 2022/01/10 12:48:30 by ddordain         ###   ########.fr       */
+/*   Updated: 2022/01/10 13:51:07 by ddordain         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ int	alloc_index_head(t_dlist *list)
 	t_nb	*sub_elem;
 
 	element = list->head;
-	while(element != NULL)
+	while (element != NULL)
 	{
 		elem_iterator = element->next;
-		while(elem_iterator != NULL)
+		while (elem_iterator != NULL)
 		{
 			sub_elem = element->data;
 			if (get_nbr(element) > get_nbr(elem_iterator))
@@ -60,10 +60,10 @@ int	alloc_index_prev(t_dlist *list)
 	t_nb	*sub_elem;
 
 	element = list->tail;
-	while(element != NULL)
+	while (element != NULL)
 	{
 		elem_iterator = element->prev;
-		while(elem_iterator != NULL)
+		while (elem_iterator != NULL)
 		{
 			sub_elem = element->data;
 			if (get_nbr(element) > get_nbr(elem_iterator))
@@ -74,7 +74,6 @@ int	alloc_index_prev(t_dlist *list)
 	}
 	return (EXIT_SUCCESS);
 }
-
 
 int	alloc_number(t_dlist *list, char *str)
 {
@@ -97,7 +96,7 @@ int	alloc_chunk(t_dlist *list)
 	t_nb	*sub_elem;
 	int		chunk_divisor;
 
-	chunk_divisor = ft_dlist_size(list) / 10;
+	chunk_divisor = ft_dlist_size(list) / 10 + 1;
 	element = list->head;
 	while (element != NULL)
 	{
